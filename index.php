@@ -66,7 +66,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 $res = curl_exec($ch);
 if (curl_errno($ch) != 0) // cURL error
 	{
-	if(DEBUG == true) {	
+	if(DEBUG == true) {
 		error_log(date('[Y-m-d H:i e] '). "Can't connect to PayPal to validate IPN message: " . curl_error($ch) . PHP_EOL, 3, LOG_FILE);
 	}
 	curl_close($ch);
@@ -98,7 +98,8 @@ if (strcmp ($res, "VERIFIED") == 0) {
 	//$txn_id = $_POST['txn_id'];
 	//$receiver_email = $_POST['receiver_email'];
 	//$payer_email = $_POST['payer_email'];
-	
+	echo "Sucess!";
+
 	if(DEBUG == true) {
 		error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req ". PHP_EOL, 3, LOG_FILE);
 	}
